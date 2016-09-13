@@ -184,6 +184,7 @@ module Elasticsearch
                     changed_attributes_by_locale[locale]
                   end
 
+                  index_name = "#{self.index_name}-#{locale}".downcase
                   client.update(
                     { index: index_name,
                       type: document_type,
